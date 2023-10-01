@@ -1,0 +1,55 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Application
+        run: npm run build
+
+test:
+    runs-on: ubuntu-latest
+    needs: build  # This job depends on the "build" job
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+        
+deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test]  # This job depends on both "build" and "test" jobs
+
+    steps:
+      - name: Deploy Application
+        # Add your deployment steps here
+        run: |
+          echo "Deploying the application..."
+          # Add your deployment commands here

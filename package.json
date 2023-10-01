@@ -1,0 +1,13 @@
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js application",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha tests/test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^9.0.3"
+  }
+}
