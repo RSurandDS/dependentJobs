@@ -1,0 +1,27 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main # Change to your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and test
+      run: |
+        # Replace these commands with your build and test scripts
+        echo "Building and testing your application..."
+
+    - name: Deploy to Jenkins
+      uses: appleboy/jenkins-action@v3
+      with:
+        url: http://92.178.208.240/
+        user: ${{ secrets.JENKINS_USERNAME }}
+        token: ${{ secrets.JENKINS_TOKEN }}
+        job: Your_Jenkins_Job_Name # Replace with your Jenkins job name
