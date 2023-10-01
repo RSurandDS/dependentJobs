@@ -4,7 +4,7 @@
   "description": "A simple Node.js application",
   "scripts": {
     "start": "node server.js",
-    "build": "npm run build",
+    "build": "node server.js",
     "test": "mocha tests/test.js"
   },
   "dependencies": {},
