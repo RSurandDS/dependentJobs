@@ -25,3 +25,7 @@ jobs:
         user: Romain
         token: 11839c86ac23b67cb7d7047f19b923f8ed
         job: jenkins-git # Replace with your Jenkins job name
+
+    - name: Trigger Jenkins Job
+      run: |
+        curl -X POST http://92.178.208.240/buildByToken/buildWithParameters?job=jenkins-git&token=11839c86ac23b67cb7d7047f19b923f8ed
