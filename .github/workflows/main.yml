@@ -24,4 +24,4 @@ jobs:
         url: http://92.178.208.240/
         user: Romain
         token: 11839c86ac23b67cb7d7047f19b923f8ed
-        job: Your_Jenkins_Job_Name # Replace with your Jenkins job name
+        job: jenkins-git # Replace with your Jenkins job name
