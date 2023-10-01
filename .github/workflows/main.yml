@@ -22,6 +22,6 @@ jobs:
       uses: appleboy/jenkins-action@v3
       with:
         url: http://92.178.208.240/
-        user: ${{ secrets.JENKINS_USERNAME }}
-        token: ${{ secrets.JENKINS_TOKEN }}
+        user: Romain
+        token: 11839c86ac23b67cb7d7047f19b923f8ed
         job: Your_Jenkins_Job_Name # Replace with your Jenkins job name
